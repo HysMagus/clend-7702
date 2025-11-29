@@ -25,6 +25,13 @@ yarn install
 ## Usage
 
 ```sh
+# Run Test
+export MAINNET_RPC_URL="https://ethereum-rpc.publicnode.com"
+export MAKER_FLASH="0x60744434d6339a6B27d73d9Eda62b6F66a0a04FA"
+forge test --fork-url "$MAINNET_RPC_URL" --match-contract ClendingLiquidatorForkTest
+
+```
+```sh
 # Run Foundry tests
 forge test
 
