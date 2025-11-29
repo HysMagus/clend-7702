@@ -1,12 +1,16 @@
-# EIP-7702 Code Examples
+# cLend EIP-7702 Liquidator
 
-A collection of code examples demonstrating EIP-7702 (Externally Owned Account to Smart Contract Wallet) functionality.
+This is a weekend project implementing a position exiter that utilizes the benefits of EIP 7702 (turning an EOA into a smart contract for a single transaction) to bypass the cLend design pitfalls that prevent external parties from repaying another parties loans (even with consent). This is due to the contract recognizing msg.sender as the user who's loans are being handled during interaction.
 
-## What is EIP-7702?
+By using EIP-7702, a party can utilize MakerDAO's flash mint functionality to flash borrow the amount of money they have in debt, repay their loan, reclaim collateral, and dump their asset for a profit on Uniswap V2's CORE/WETH Pair. 
 
-EIP-7702 enables EOAs to temporarily become smart contract wallets by setting their code, allowing for advanced wallet features while maintaining EOA simplicity.
+This only works if a. the primary collateral asset is CORE and b. CORE is more valuable on Uniswap then it is cLend 
+
+This repo is currently in a scratch pad state and most likely none of this stuff works. I was liquidated long before EIP-7702 came out, so this is purely for fun and untested. 
 
 ## Setup
+
+
 
 ```sh
 # Install dependencies
@@ -17,8 +21,6 @@ yarn install
 ## Structure
 
 - **Contracts**: `src/` - Smart wallet implementations and examples
-- **Tests**: `test/` - Foundry and TypeScript test suites
-- **Examples**: Social recovery, batch operations, collision prevention
 
 ## Usage
 
