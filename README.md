@@ -2,7 +2,7 @@
 
 This is a weekend project implementing a position exiter that utilizes the benefits of EIP 7702 (turning an EOA into a smart contract for a single transaction) to bypass the cLend design pitfalls that prevent external parties from repaying another parties loans (even with consent). This is due to the contract recognizing msg.sender as the user who's loans are being handled during interaction.
 
-By using EIP-7702, a party can utilize MakerDAO's flash mint functionality to flash borrow the amount of money they have in debt, repay their loan, reclaim collateral, and dump their asset for a profit on Uniswap V2's CORE/WETH Pair. 
+By using EIP-7702, a party can utilize MakerDAO's flash mint functionality to flash borrow the amount of money they have in debt, repay their loan, reclaim collateral, and dump their asset for a profit on Uniswap V2's CORE/WETH Pair, then go from WETH to DAI to repay the flash minted amount, and keep the remainder as profit
 
 This only works if a. the primary collateral asset is CORE and b. CORE is more valuable on Uniswap then it is cLend 
 
